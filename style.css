@@ -1,8 +1,8 @@
-/* Background */
+/* Body & Fonts */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url('Background/945.jpg') no-repeat center center fixed;
+  font-family: 'Cambria', serif;  /* main font */
+  background: url('ttps://raw.githubusercontent.com/rawats7/vibeverse/main/background1.jpeg') no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
@@ -31,13 +31,27 @@ header { text-align: center; padding: 20px; }
   background: rgba(0,0,0,0.6);
   border-radius: 12px;
   padding: 10px 15px;
+  transition: 0.3s;
 }
+.song-box:hover { background: rgba(0,0,0,0.8); transform: scale(1.02); cursor:pointer; }
 
+/* Song Info */
 .song-info { display: flex; align-items: center; gap: 15px; }
 .song-info img { width: 60px; height: 60px; border-radius: 8px; }
 
-.song-details { display: flex; flex-direction: column; }
-.song-details h4, .song-details p { margin: 0; }
+/* Song Details Fonts */
+.song-details h4 { 
+  margin: 0; 
+  font-family: 'Georgia', serif; /* elegant font for song name */ 
+  font-size: 18px; 
+  font-weight: bold;
+}
+.song-details p { 
+  margin: 0; 
+  font-family: 'Arial', sans-serif; /* modern font for artist */ 
+  font-size: 14px; 
+  color: #ddd; 
+}
 
 /* Options menu */
 .options-menu { position: relative; }
@@ -68,6 +82,5 @@ header { text-align: center; padding: 20px; }
   padding: 10px 20px;
 }
 
-/* DM button */
-
+/* DM button (Song Not Found) */
 .dmBtn { display: inline-block; margin-top: 5px; padding: 8px 12px; border-radius: 50px; background: #E1306C; color: white; text-decoration: none; }
