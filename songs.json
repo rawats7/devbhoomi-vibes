@@ -18,5 +18,15 @@
     "audio": "songs/phoolon.mp3",
     "featured": false,
     "date": "2026-03-03"
+  },
+  {
+    "id": 1772643567674,
+    "name": "bali_jwani_supnaya_mera",
+    "artist": "Rama Cassettes",
+    "category": "Garhwali",
+    "image": "images/bali_jwani_supnaya_mera.jpg",
+    "audio": "songs/bali_jwani_supnaya_mera.mpeg",
+    "featured": false,
+    "date": "2026-03-04"
   }
 ]
