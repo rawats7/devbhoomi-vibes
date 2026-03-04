@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: url('your-background.jpg') no-repeat center center fixed;
+  background: url('Background/945.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
@@ -69,4 +69,5 @@ header { text-align: center; padding: 20px; }
 }
 
 /* DM button */
+
 .dmBtn { display: inline-block; margin-top: 5px; padding: 8px 12px; border-radius: 50px; background: #E1306C; color: white; text-decoration: none; }
