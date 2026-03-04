@@ -8,12 +8,16 @@ fetch("songs.json")
   .then(data => {
     songsData = data;
     displaySongs(data);
-    // Autoplay first featured song if exists
-    let featured = data.find(s=>s.featured);
-    if(featured) playByIndex(songsData.indexOf(featured));
+
+    // Autoplay first featured song
+    let featured = data.find(s => s.featured);
+    if(featured){
+      currentIndex = data.indexOf(featured);
+      playByIndex(currentIndex);
+    }
   });
 
-// Display songs
+// Display Songs
 function displaySongs(data){
   const container = document.getElementById("songsContainer");
   container.innerHTML = "";
@@ -23,10 +27,10 @@ function displaySongs(data){
     return;
   } else document.getElementById("notFound").style.display = "none";
 
-  data.forEach(song=>{
+  data.forEach(song => {
     container.innerHTML += `
       <div class="song-box">
-        <div class="song-info">
+        <div class="song-info" onclick="playByIndex(${songsData.indexOf(song)})">
           <img src="${song.image}" alt="${song.name}">
           <div class="song-details">
             <h4>${song.name}</h4>
@@ -50,21 +54,39 @@ function toggleMenu(btn){
   menu.style.display = menu.style.display==="flex"?"none":"flex";
 }
 
-// Play song (for player)
+// Player
+const player = document.getElementById("audioPlayer");
+player.addEventListener("ended", nextSong);
+
 function playSong(src){
-  const player = document.getElementById("audioPlayer");
   player.src = src;
   player.play();
 }
 
+// Play by index (click box or autoplay next)
+function playByIndex(index){
+  currentIndex = index;
+  playSong(songsData[index].audio);
+}
+
+// Next / Prev Player
+function nextSong(){
+  currentIndex = (currentIndex+1) % songsData.length;
+  playByIndex(currentIndex);
+}
+function prevSong(){
+  currentIndex = (currentIndex-1+songsData.length) % songsData.length;
+  playByIndex(currentIndex);
+}
+
 // Search & Sort
-document.getElementById("search").addEventListener("input",function(){
+document.getElementById("search").addEventListener("input", function(){
   let value = this.value.toLowerCase();
   let filtered = songsData.filter(s=> s.name.toLowerCase().includes(value) || s.artist.toLowerCase().includes(value));
   displaySongs(filtered);
 });
 
-document.getElementById("sort").addEventListener("change",function(){
+document.getElementById("sort").addEventListener("change", function(){
   let sorted = [...songsData];
   if(this.value==="az") sorted.sort((a,b)=>a.name.localeCompare(b.name));
   if(this.value==="za") sorted.sort((a,b)=>b.name.localeCompare(a.name));
@@ -75,12 +97,7 @@ document.getElementById("sort").addEventListener("change",function(){
 });
 
 // Filter Category
-function filterCategory(cat){ 
-  currentCategory=cat; 
-  displaySongs(cat==="All"?songsData:songsData.filter(s=>s.category===cat)); 
+function filterCategory(cat){
+  currentCategory=cat;
+  displaySongs(cat==="All"?songsData:songsData.filter(s=>s.category===cat));
 }
-
-// Next / Prev Player
-function playByIndex(index){ currentIndex=index; playSong(songsData[index].audio); }
-function nextSong(){ currentIndex=(currentIndex+1)%songsData.length; playByIndex(currentIndex); }
-function prevSong(){ currentIndex=(currentIndex-1+songsData.length)%songsData.length; playByIndex(currentIndex); }
