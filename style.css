@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Cambria', serif;  /* main font */
-  background: url('ttps://raw.githubusercontent.com/rawats7/vibeverse/main/background1.jpeg') no-repeat center center fixed;
+  background: url('https://raw.githubusercontent.com/rawats7/vibeverse/main/background1.jpeg') no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
@@ -84,3 +84,4 @@ header { text-align: center; padding: 20px; }
 
 /* DM button (Song Not Found) */
 .dmBtn { display: inline-block; margin-top: 5px; padding: 8px 12px; border-radius: 50px; background: #E1306C; color: white; text-decoration: none; }
+
