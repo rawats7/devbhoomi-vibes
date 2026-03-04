@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devbhoomi Tunes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎶 Devbhoomi Tunes</h1>
+  <p>Garhwali + Kumaoni Songs Hub</p>
+</header>
+
+<!-- Search & Sort -->
+<div class="controls">
+  <input type="text" id="search" placeholder="Search songs...">
+  <select id="sort">
+    <option value="az">Name A-Z</option>
+    <option value="za">Name Z-A</option>
+    <option value="artist">Artist</option>
+    <option value="new">Newest</option>
+    <option value="old">Oldest</option>
+  </select>
+</div>
+
+<!-- Category Buttons -->
+<div class="categories">
+  <button onclick="filterCategory('All')">All</button>
+  <button onclick="filterCategory('Garhwali')">Garhwali</button>
+  <button onclick="filterCategory('Kumaoni')">Kumaoni</button>
+</div>
+
+<!-- Songs Container -->
+<div id="songsContainer"></div>
+
+<!-- Song Not Found -->
+<div id="notFound" style="display:none;">
+  <p>😔 Song not found</p>
+  <a href="https://instagram.com/raj_rwt.012" target="_blank" class="dmBtn">DM us on Instagram</a>
+</div>
+
+<!-- Player Bar -->
+<div id="playerBar">
+  <button onclick="prevSong()">⏮</button>
+  <audio id="audioPlayer" controls></audio>
+  <div id="playerInfo"></div>
+  <button onclick="nextSong()">⏭</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

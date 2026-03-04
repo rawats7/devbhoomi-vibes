@@ -1,0 +1,94 @@
+/* Green Matrix Background */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: #0f0;
+}
+
+/* Login Screen */
+#loginScreen {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  display:flex; justify-content:center; align-items:center;
+  background: linear-gradient(0deg, #000000 0%, #001100 100%);
+  overflow:hidden;
+}
+
+/* Login Box */
+.loginBox {
+  background: rgba(0,0,0,0.8);
+  padding: 40px;
+  border: 2px solid #0f0;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px #0f0;
+}
+
+.loginBox h2 { margin-bottom: 20px; }
+
+.loginBox input {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #0f0;
+  background: black;
+  color: #0f0;
+}
+
+#loginBtn {
+  padding: 10px 20px;
+  background: #0f0;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px #0f0;
+}
+#loginBtn:hover { background: #0c0; }
+
+/* Dashboard Layout */
+#dashboard { display:flex; height:100vh; }
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #001100;
+  padding: 20px;
+  box-shadow: 2px 0 10px #0f0;
+}
+.sidebar h2 { margin-bottom:20px; }
+.sidebar ul { list-style:none; padding:0; }
+.sidebar li { padding:10px 0; cursor:pointer; border-bottom:1px solid #0f0; }
+.sidebar li:hover { background: #003300; }
+
+/* Main Content */
+.mainContent {
+  flex:1;
+  padding: 20px;
+  overflow-y:auto;
+}
+
+/* Sections */
+.section { margin-bottom: 20px; }
+.section input, .section select {
+  padding: 10px; margin: 10px 0; border-radius: 8px; border:1px solid #0f0; background:black; color:#0f0;
+}
+.section button {
+  padding: 10px 20px; border:none; border-radius:8px; background:#0f0; color:black; cursor:pointer; font-weight:bold;
+}
+
+/* Song Cards */
+.songCards {
+  display:flex; flex-direction:column; gap:10px;
+}
+.songCard {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 15px; background: rgba(0,0,0,0.7);
+  border: 1px solid #0f0; border-radius:12px;
+}
+.songCard div { display:flex; flex-direction:column; }
+.songCard button {
+  padding:5px 10px; border:none; border-radius:5px; background:#0f0; color:black; cursor:pointer;
+}
+.songCard button:hover { background:#0c0; }

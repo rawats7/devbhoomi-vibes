@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Bedu Pako",
+    "artist": "Narendra Singh Negi",
+    "category": "Garhwali",
+    "image": "images/bedu.jpg",
+    "audio": "songs/bedu.mp3",
+    "featured": true,
+    "date": "2026-03-04"
+  },
+  {
+    "id": 2,
+    "name": "Phoolon Ka Rang",
+    "artist": "Madhuri Rana",
+    "category": "Kumaoni",
+    "image": "images/phoolon.jpg",
+    "audio": "songs/phoolon.mp3",
+    "featured": false,
+    "date": "2026-03-03"
+  }
+]

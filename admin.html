@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Devbhoomi Tunes</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="loginScreen">
+  <div class="loginBox">
+    <h2>ADMIN LOGIN</h2>
+    <input type="password" id="adminPass" placeholder="Enter Password">
+    <button id="loginBtn" onclick="checkLogin()">LOGIN</button>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" style="display:none;">
+  <aside class="sidebar">
+    <h2>Devbhoomi Admin</h2>
+    <ul>
+      <li onclick="showSection('add')">➕ Add Song</li>
+      <li onclick="showSection('songs')">🎵 Manage Songs</li>
+      <li onclick="downloadJSON()">📥 Download JSON</li>
+    </ul>
+  </aside>
+  <main class="mainContent">
+    <!-- Add Song Section -->
+    <div id="addSection" class="section">
+      <h2>Add New Song</h2>
+      <input type="text" id="name" placeholder="Song Name">
+      <input type="text" id="artist" placeholder="Artist Name">
+      <select id="category">
+        <option value="Garhwali">Garhwali</option>
+        <option value="Kumaoni">Kumaoni</option>
+      </select>
+      <input type="text" id="image" placeholder="Image Path (images/song.jpg)">
+      <input type="text" id="audio" placeholder="Audio Path (songs/song.mp3)">
+      <label>
+        Featured:
+        <input type="checkbox" id="featured">
+      </label>
+      <button onclick="addSong()">Add Song</button>
+    </div>
+
+    <!-- Manage Songs Section -->
+    <div id="songsSection" class="section" style="display:none;">
+      <h2>Existing Songs</h2>
+      <div id="songList" class="songCards"></div>
+    </div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

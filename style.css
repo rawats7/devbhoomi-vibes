@@ -1,0 +1,72 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('your-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* Header */
+header { text-align: center; padding: 20px; }
+
+/* Controls */
+.controls { text-align: center; margin-bottom: 15px; }
+.controls input, .controls select {
+  padding: 10px; margin: 5px; border-radius: 10px; border: none;
+}
+
+/* Categories */
+.categories { text-align: center; margin-bottom: 20px; }
+.categories button { padding: 8px 15px; margin: 5px; border-radius: 8px; border: none; cursor: pointer; }
+
+/* Songs container */
+#songsContainer { display: flex; flex-direction: column; gap: 10px; padding: 0 20px; }
+
+/* Song Box */
+.song-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+
+.song-info { display: flex; align-items: center; gap: 15px; }
+.song-info img { width: 60px; height: 60px; border-radius: 8px; }
+
+.song-details { display: flex; flex-direction: column; }
+.song-details h4, .song-details p { margin: 0; }
+
+/* Options menu */
+.options-menu { position: relative; }
+.options-btn { cursor: pointer; font-size: 20px; background: none; border: none; color: white; }
+.menu-content {
+  display: none; 
+  position: absolute; 
+  right: 0; 
+  top: 25px; 
+  background: rgba(0,0,0,0.9); 
+  border-radius: 8px; 
+  padding: 5px;
+  flex-direction: column;
+  z-index: 99;
+}
+.menu-content a { color: white; text-decoration: none; background: none; border: none; padding: 5px 10px; cursor: pointer; text-align: left; width: 100%; }
+.menu-content a:hover { background: rgba(255,255,255,0.1); }
+
+/* Player Bar */
+#playerBar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* DM button */
+.dmBtn { display: inline-block; margin-top: 5px; padding: 8px 12px; border-radius: 50px; background: #E1306C; color: white; text-decoration: none; }
